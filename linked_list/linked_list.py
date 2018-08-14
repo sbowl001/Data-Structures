@@ -5,8 +5,8 @@ and a reference to the next node in the list
 """
 class Node:
   def __init__(self, value=None, next_node=None):
-    self.value = value
-    self.next_node = next_node
+    self.value = value #header
+    self.next_node = next_node #pointer
 
   def get_value(self):
     return self.value
@@ -23,13 +23,28 @@ class LinkedList:
     self.tail = None
 
   def add_to_tail(self, value):
+    new_node = Node(value)
+    if self.head == None:
+      self.head = new_node
+      self.tail = new_node
+    else:
+      self.tail.next_node = new_node
+      tail = new_node
     pass
 
   def remove_head(self):
+    #if head == None, return None
+
     pass
 
   def contains(self, value):
-    pass
+    cur_node = self.head
+    while not cur_node == None:
+      # if value == value, return true
+        #update cur_node.next
+    
+    #else return false
+      pass
 
   def get_max(self):
     pass
