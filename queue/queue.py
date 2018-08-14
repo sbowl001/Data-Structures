@@ -9,7 +9,7 @@ class Queue:
 
   def enqueue(self, item):
     pass
-  
+
   def dequeue(self):
     pass
 
