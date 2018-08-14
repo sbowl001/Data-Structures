@@ -19,6 +19,14 @@ class DoublyLinkedList:
     self.tail = node
 
   def add_to_head(self, value):
+    #create new_node, ListNode
+    #if head does not exits
+    #head and tail = new_node
+
+    #else 
+      #head.prev = new_node
+      #new_node.next = head
+      #update head head = new_node
     pass
 
   def remove_from_head(self):

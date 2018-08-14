@@ -7,7 +7,6 @@ class Node:
   def __init__(self, value=None, next_node=None):
     self.value = value
     self.next_node = next_node
-    #pointer
 
   def get_value(self):
     return self.value
@@ -31,25 +30,43 @@ class LinkedList:
       self.tail = new_node
     else:
       #set old tails next to new node
-      self.tail.set_next = new_node
-      tail = new_node
+      old_tail = self.tail
+      old_tail.set_next(new_node)
+      self.tail = new_node
 
   def remove_head(self):
     #if head doesn't exist
     if self.head == None:
       return None
     else:
+      old_head = self.head
+      self.head = old_head.next_node
+
+    if self.head == None:
+      self.tail = None
+    return old_head.value
     #set head.next = head return head.value
     #if head and tail are same, do something...
 
   def contains(self, value):
     cur_node = self.head
     while not cur_node == None:
-      #if found value, return True
-      #update cur_node
-      
-    #else return False  
-    pass
+      if value == cur_node.value:
+        return True
+      else:
+        cur_node = cur_node.next_node  
+    return False  
 
   def get_max(self):
-    pass
+    if self.head == None:
+      return None
+    cur_node = self.head
+    biggest = self.head.value
+    while not cur_node == None:
+      if biggest < cur_node.value:
+        biggest = cur_node.value
+      cur_node = cur_node.next_node
+    return biggest  
+
+
+
