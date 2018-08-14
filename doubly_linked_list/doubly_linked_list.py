@@ -19,6 +19,15 @@ class DoublyLinkedList:
     self.tail = node
 
   def add_to_head(self, value):
+    # create new_node
+
+    #if head DNE, head & tail = new_node
+    #add to head or remove from the tail
+
+    # else
+      # head.prev = new_node
+      # update head.. head = new_node
+      # update head... head = new_node
     pass
 
   def remove_from_head(self):
